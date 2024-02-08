@@ -1,24 +1,57 @@
 import Image from 'next/image'
 import Logo from '@/../public/mercado-libre-logo.svg'
 import Promo from '@/../public/promo.webp'
+import Link from 'next/link'
+import Location from '@/../public/location.png'
+import Chart from '@/../public/Chart.png'
+
+interface Items {
+  name: string,
+  subCategories?: string[],
+  free?: boolean
+}
 
 
 const Header = () => {
+
+  const items: Items[] = [{
+    name: 'Categorías',
+    subCategories: ['Vehículos', 'Inmuebles', 'Supermercado', 'Tecnología', 'Hogar y Muebles', 'Electrodomésticos', 'Herramientas', 'Construcción', 'Deportes y Fitness', 'Accesorios para Vehículos', 'Moda', 'Juegos y Juguetes', 'Bebés', 'Belleza y Cuidado Personal', 'Salud y Equipamiento Médico', 'Industrias y oficinas', 'Agro', 'Productos Sustentables', 'Servicios', 'Más Vendidos', 'Tiendas oficiales', 'Ver más categorías']
+  }, {
+    name: 'Ofertas'
+  }, {
+    name: 'Historial'
+  }, {
+    name: 'Supermercado'
+  }, {
+    name: 'Moda'
+  }, {
+    name: 'Mercado Play',
+    free: true
+  }, {
+    name: 'Vender'
+  }, {
+    name: 'Ayuda'
+  }]
+
+  const login: string[] = ['Crea tu cuenta', 'Ingresá', 'Mis compras']
+
   return (
-    <header className="bg-[#ffe600] w-full h-[100px] shadow shadow-[#ffe600]/80 flex justify-center py-2.5">
-      <div className="flex justify-between max-w-[1200px] h-10 my-1">
+    <header className="flex flex-col bg-[#ffe600] w-full h-[100px] shadow shadow-[#ffe600]/80 items-center pt-2 text-[12px]">
+      <div className="flex justify-between max-w-[1200px] h-10">
         <picture className='w-[162px]'>
-          <Image src={Logo} alt="Logo" width={134} height={34} />
+          <Link href='/'>
+            <Image src={Logo} alt="Logo" width={134} height={34} />
+          </Link>
         </picture>
 
         <form className='w-[580px] h-[40px]'>
           <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only ">Search</label>
           <div className="relative">
             <input type="search" id="default-search" className="block w-full text-sm text-gray-900 border border-gray-300 rounded bg-gray-50 focus:ring-blue-500 focus:border-blue-500 py-2.5 pl-[15px] pr-[60px] shadow-[0_1px_2px_0_rgba(0,0,0,0.2)] focus:outline-none" placeholder="Buscar productos, marcas y mas..." required />
-
             <button type='submit' className="absolute inset-y-0 end-5 flex items-center ps-3 cursor-pointer before:content-[''] before:h-6 before:border-solid before:border-l-[1px] before:border-[#e6e6e6] before:mr-3">
               <svg className="w-4 h-4 text-gray-500 " aria-hidden="true" fill="none" viewBox="0 0 20 20">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
               </svg>
             </button>
           </div>
@@ -30,6 +63,41 @@ const Header = () => {
           </picture>
         </div>
 
+      </div>
+      <div className="flex items-end justify-between max-w-[1200px] h-14 my-1">
+        <Link href='/' className='flex w-[162px] h-10 pointer hover:border'>
+          <picture>
+            <Image src={Location} alt='location' />
+          </picture>
+          <div className='px-2'>
+            <p className='text-[10px] text-black/80 leading-5	'>Enviar a</p>
+            <span>Capital Federal</span>
+          </div>
+        </Link>
+        <nav className='flex w-[580px]'>
+          <ul className='flex items-end'>
+            {
+              items.map(({ name, subCategories, free }) =>
+                <li className={`mx-2 items-center  ${free ? 'flex flex-col' : ''}`} key={name}>
+                  {free && <span className='w-8 rounded-xl px-[3px] bg-green-500 text-white text-[8px] text-center'>Gratis</span>}
+                  <Link href={`/${name.toLowerCase().normalize('NFD').replace(/([aeio])\u0301|(u)[\u0301\u0308]/gi, "$1$2")
+                    .normalize()}`}>{name}</Link>
+                  <ul className='hidden'>
+                    {subCategories && subCategories.map(sub => <li className='bg-[#323233] text-white' key={sub}>{sub}</li>)}
+                  </ul>
+                </li>
+              )
+            }
+          </ul>
+        </nav>
+        <div className="flex w-[390px]">
+          <ul className='flex'>
+            {login.map(item => <li className='px-[3px]' key={item}>{item}</li>)}
+          </ul>
+          <Link href='/chart'>
+            <Image src={Chart} alt='Carro de compras' />
+          </Link>
+        </div>
       </div>
     </header>
   )
