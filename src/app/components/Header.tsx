@@ -1,20 +1,24 @@
 import Image from 'next/image'
-import Logo from '@/../public/mercado-libre-logo.svg'
-import Promo from '@/../public/promo.webp'
+import Logo from '@/app/assets/images/mercado-libre-logo.svg'
+import Promo from '@/app/assets/images/promo.webp'
 import Link from 'next/link'
-import Location from '@/../public/location.png'
-import Chart from '@/../public/Chart.png'
+import Location from '@/app/assets/images/location.png'
+import Chart from '@/app/assets/images/Chart.png'
+import Dot from './Dot'
 
-interface Items {
+interface Categories {
   name: string,
   subCategories?: string[],
   free?: boolean
 }
 
+interface Login {
+  name: string,
+  link: string
+}
 
 const Header = () => {
-
-  const items: Items[] = [{
+  const categories: Categories[] = [{
     name: 'Categorías',
     subCategories: ['Vehículos', 'Inmuebles', 'Supermercado', 'Tecnología', 'Hogar y Muebles', 'Electrodomésticos', 'Herramientas', 'Construcción', 'Deportes y Fitness', 'Accesorios para Vehículos', 'Moda', 'Juegos y Juguetes', 'Bebés', 'Belleza y Cuidado Personal', 'Salud y Equipamiento Médico', 'Industrias y oficinas', 'Agro', 'Productos Sustentables', 'Servicios', 'Más Vendidos', 'Tiendas oficiales', 'Ver más categorías']
   }, {
@@ -34,7 +38,18 @@ const Header = () => {
     name: 'Ayuda'
   }]
 
-  const login: string[] = ['Crea tu cuenta', 'Ingresá', 'Mis compras']
+  const login: Login[] = [{
+    name: 'Creá tu cuenta',
+    link: '/sign-up'
+  }, {
+    name: 'Ingresá',
+    link: '/login',
+  }, {
+    name: 'Mis compras',
+    link: '/my_purchases'
+  }]
+
+  const itemsChart = 3
 
   return (
     <header className="flex flex-col bg-[#ffe600] w-full h-[100px] shadow shadow-[#ffe600]/80 items-center pt-2 text-[12px]">
@@ -64,22 +79,24 @@ const Header = () => {
         </div>
 
       </div>
-      <div className="flex items-end justify-between max-w-[1200px] h-14 my-1">
-        <Link href='/' className='flex w-[162px] h-10 pointer hover:border'>
-          <picture>
-            <Image src={Location} alt='location' />
-          </picture>
-          <div className='px-2'>
-            <p className='text-[10px] text-black/80 leading-5	'>Enviar a</p>
-            <span>Capital Federal</span>
-          </div>
-        </Link>
+      <div className="flex items-end justify-between max-w-[1200px] h-12 my-1">
+        <div className="w-[162px]">
+          <Link href='/' className='flex pl-2 items-center w-[140px] h-12 pointer rounded-xl hover:border hover: border-gray-400'>
+            <picture>
+              <Image src={Location} alt='location' />
+            </picture>
+            <div className='pl-2'>
+              <p className='text-[10px] text-black/80 leading-5	'>Enviar a</p>
+              <span>Capital Federal</span>
+            </div>
+          </Link>
+        </div>
         <nav className='flex w-[580px]'>
           <ul className='flex items-end'>
             {
-              items.map(({ name, subCategories, free }) =>
+              categories.map(({ name, subCategories, free }) =>
                 <li className={`mx-2 items-center  ${free ? 'flex flex-col' : ''}`} key={name}>
-                  {free && <span className='w-8 rounded-xl px-[3px] bg-green-500 text-white text-[8px] text-center'>Gratis</span>}
+                  {free && <Dot style='w-8 px-[3px] bg-[#00a650] text-[8px]  text-white rounded-xl'>Gratis</Dot>}
                   <Link href={`/${name.toLowerCase().normalize('NFD').replace(/([aeio])\u0301|(u)[\u0301\u0308]/gi, "$1$2")
                     .normalize()}`}>{name}</Link>
                   <ul className='hidden'>
@@ -90,11 +107,17 @@ const Header = () => {
             }
           </ul>
         </nav>
-        <div className="flex w-[390px]">
-          <ul className='flex'>
-            {login.map(item => <li className='px-[3px]' key={item}>{item}</li>)}
+        <div className="flex w-[390px] justify-end items-end">
+          <ul className='flex gap-6'>
+            {login.map(({ name, link }) =>
+              <li className='px-[3px]' key={name}>
+                <Link href={link}>
+                  {name}
+                </Link>
+              </li>)}
           </ul>
-          <Link href='/chart'>
+          <Link href='/chart' className='ml-2 flex flex-col items-end'>
+            {itemsChart > 0 && <Dot style='w-3 text-white px-1 bg-red-500 text-[8px]'>{itemsChart}</Dot>}
             <Image src={Chart} alt='Carro de compras' />
           </Link>
         </div>
