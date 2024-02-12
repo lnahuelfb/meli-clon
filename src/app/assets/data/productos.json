@@ -1,0 +1,211 @@
+[
+  {
+    "name": "iPhone 12",
+    "author": "Apple",
+    "price": "999",
+    "description": "The latest iPhone model",
+    "rating": "4.5",
+    "color": "Black",
+    "stock": "50",
+    "sells": "1000",
+    "details": "A powerful smartphone with a stunning display"
+  },
+  {
+    "name": "Samsung Galaxy S21",
+    "author": "Samsung",
+    "price": "899",
+    "description": "High-end Android phone",
+    "rating": "4.7",
+    "color": "Phantom Gray",
+    "stock": "30",
+    "sells": "800",
+    "details": "A feature-packed device with a great camera"
+  },
+  {
+    "name": "PlayStation 5",
+    "author": "Sony",
+    "price": "499",
+    "description": "Next-gen gaming console",
+    "rating": "4.8",
+    "color": "White",
+    "stock": "20",
+    "sells": "500",
+    "details": "Experience immersive gaming with stunning graphics"
+  },
+  {
+    "name": "AirPods Pro",
+    "author": "Apple",
+    "price": "249",
+    "description": "Wireless earphones with active noise cancellation",
+    "rating": "4.6",
+    "color": "White",
+    "stock": "100",
+    "sells": "2000",
+    "details": "Enjoy superior sound quality and a comfortable fit"
+  },
+  {
+    "name": "Kindle Paperwhite",
+    "author": "Amazon",
+    "price": "129",
+    "description": "High-resolution e-reader with built-in light",
+    "rating": "4.4",
+    "color": "Black",
+    "stock": "80",
+    "sells": "1500",
+    "details": "Read books, magazines, and more with ease"
+  },
+  {
+    "name": "Fitbit Charge 4",
+    "author": "Fitbit",
+    "price": "149",
+    "description": "Advanced fitness tracker with built-in GPS",
+    "rating": "4.3",
+    "color": "Rosewood",
+    "stock": "60",
+    "sells": "900",
+    "details": "Track your workouts, heart rate, and sleep"
+  },
+  {
+    "name": "Dyson V11",
+    "author": "Dyson",
+    "price": "599",
+    "description": "Powerful cordless vacuum cleaner",
+    "rating": "4.9",
+    "color": "Blue",
+    "stock": "10",
+    "sells": "200",
+    "details": "Effortlessly clean your home with advanced technology"
+  },
+  {
+    "name": "Instant Pot Duo",
+    "author": "Instant Pot",
+    "price": "99",
+    "description": "7-in-1 multi-use programmable pressure cooker",
+    "rating": "4.7",
+    "color": "Silver",
+    "stock": "15",
+    "sells": "300",
+    "details": "Cook a variety of delicious meals with ease"
+  },
+  {
+    "name": "GoPro HERO9",
+    "author": "GoPro",
+    "price": "449",
+    "description": "Waterproof action camera with 5K video",
+    "rating": "4.5",
+    "color": "Black",
+    "stock": "25",
+    "sells": "600",
+    "details": "Capture your adventures in stunning detail"
+  },
+  {
+    "name": "Nintendo Switch",
+    "author": "Nintendo",
+    "price": "299",
+    "description": "Hybrid gaming console for home and on-the-go",
+    "rating": "4.8",
+    "color": "Neon Blue/Neon Red",
+    "stock": "40",
+    "sells": "1000",
+    "details": "Play your favorite games anytime, anywhere"
+  },
+  {
+    "name": "Bose QuietComfort 35 II",
+    "author": "Bose",
+    "price": "349",
+    "description": "Wireless noise-cancelling headphones",
+    "rating": "4.6",
+    "color": "Black",
+    "stock": "70",
+    "sells": "1200",
+    "details": "Immerse yourself in music with exceptional sound quality"
+  },
+  {
+    "name": "LG OLED CX",
+    "author": "LG",
+    "price": "1499",
+    "description": "4K Ultra HD Smart OLED TV",
+    "rating": "4.9",
+    "color": "Black",
+    "stock": "5",
+    "sells": "100",
+    "details": "Enjoy a cinematic viewing experience at home"
+  },
+  {
+    "name": "Canon EOS R5",
+    "author": "Canon",
+    "price": "3899",
+    "description": "Full-frame mirrorless camera with 8K video",
+    "rating": "4.7",
+    "color": "Black",
+    "stock": "8",
+    "sells": "150",
+    "details": "Capture stunning photos and videos with professional quality"
+  },
+  {
+    "name": "Fujifilm Instax Mini 11",
+    "author": "Fujifilm",
+    "price": "69",
+    "description": "Instant camera for capturing memories",
+    "rating": "4.3",
+    "color": "Blush Pink",
+    "stock": "35",
+    "sells": "500",
+    "details": "Print photos instantly with a retro look"
+  },
+  {
+    "name": "Microsoft Surface Pro 7",
+    "author": "Microsoft",
+    "price": "899",
+    "description": "Versatile 2-in-1 laptop and tablet",
+    "rating": "4.6",
+    "color": "Platinum",
+    "stock": "20",
+    "sells": "400",
+    "details": "Work and play on a high-performance device"
+  },
+  {
+    "name": "Nespresso VertuoPlus",
+    "author": "Nespresso",
+    "price": "179",
+    "description": "Coffee and espresso maker with milk frother",
+    "rating": "4.4",
+    "color": "Gray",
+    "stock": "30",
+    "sells": "700",
+    "details": "Brew delicious coffee with a rich crema"
+  },
+  {
+    "name": "Fitbit Versa 3",
+    "author": "Fitbit",
+    "price": "229",
+    "description": "Advanced smartwatch with built-in voice assistant",
+    "rating": "4.5",
+    "color": "Midnight Blue",
+    "stock": "50",
+    "sells": "1000",
+    "details": "Stay connected and track your health"
+  },
+  {
+    "name": "Sony WH-1000XM4",
+    "author": "Sony",
+    "price": "349",
+    "description": "Wireless noise-cancelling headphones",
+    "rating": "4.8",
+    "color": "Silver",
+    "stock": "65",
+    "sells": "1300",
+    "details": "Immerse yourself in music with exceptional sound quality"
+  },
+  {
+    "name": "Apple Watch Series 6",
+    "author": "Apple",
+    "price": "399",
+    "description": "Advanced smartwatch with health monitoring",
+    "rating": "4.7",
+    "color": "Space Gray",
+    "stock": "90",
+    "sells": "1800",
+    "details": "Stay fit, active, and connected"
+  }
+]

@@ -1,54 +1,13 @@
+import { categories, login } from '../assets/data/data'
 import Image from 'next/image'
+import Link from 'next/link'
 import Logo from '@/app/assets/images/mercado-libre-logo.svg'
 import Promo from '@/app/assets/images/promo.webp'
-import Link from 'next/link'
 import Location from '@/app/assets/images/location.png'
 import Chart from '@/app/assets/images/Chart.png'
 import Dot from './Dot'
 
-interface Categories {
-  name: string,
-  subCategories?: string[],
-  free?: boolean
-}
-
-interface Login {
-  name: string,
-  link: string
-}
-
 const Header = () => {
-  const categories: Categories[] = [{
-    name: 'Categorías',
-    subCategories: ['Vehículos', 'Inmuebles', 'Supermercado', 'Tecnología', 'Hogar y Muebles', 'Electrodomésticos', 'Herramientas', 'Construcción', 'Deportes y Fitness', 'Accesorios para Vehículos', 'Moda', 'Juegos y Juguetes', 'Bebés', 'Belleza y Cuidado Personal', 'Salud y Equipamiento Médico', 'Industrias y oficinas', 'Agro', 'Productos Sustentables', 'Servicios', 'Más Vendidos', 'Tiendas oficiales', 'Ver más categorías']
-  }, {
-    name: 'Ofertas'
-  }, {
-    name: 'Historial'
-  }, {
-    name: 'Supermercado'
-  }, {
-    name: 'Moda'
-  }, {
-    name: 'Mercado Play',
-    free: true
-  }, {
-    name: 'Vender'
-  }, {
-    name: 'Ayuda'
-  }]
-
-  const login: Login[] = [{
-    name: 'Creá tu cuenta',
-    link: '/sign-up'
-  }, {
-    name: 'Ingresá',
-    link: '/login',
-  }, {
-    name: 'Mis compras',
-    link: '/my_purchases'
-  }]
-
   const itemsChart = 3
 
   return (
